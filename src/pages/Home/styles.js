@@ -15,8 +15,8 @@ export const Container = styled.div`
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
-        /* Works on Firefox */
-        * {
+    /* Works on Firefox */
+    * {
     scrollbar-width: thin;
     scrollbar-color: ${({ theme }) => theme.COLORS.GRAY_300} ${({ theme }) => theme.COLORS.GRAY_100};
     }
