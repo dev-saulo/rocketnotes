@@ -14,7 +14,29 @@ export const Container = styled.div`
     "newnote content";
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+
+        /* Works on Firefox */
+        * {
+    scrollbar-width: thin;
+    scrollbar-color: ${({ theme }) => theme.COLORS.GRAY_300} ${({ theme }) => theme.COLORS.GRAY_100};
+    }
+
+    /* Works on Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+    width: 12px;
+    }
+
+    *::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.COLORS.GRAY_100};
+    }
+
+    *::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.COLORS.GRAY_300};
+    border-radius: 20px;
+    border: 3px solid ${({ theme }) => theme.COLORS.GRAY_100};
+    }
 `;
+
 export const Brand = styled.div`
     grid-area: brand;
 
@@ -32,6 +54,7 @@ export const Brand = styled.div`
         color: ${({ theme }) => theme.COLORS.ORANGE}
     }
 `;
+
 export const Menu = styled.ul`
     grid-area: menu;    
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
@@ -42,16 +65,19 @@ export const Menu = styled.ul`
     > li {
         margin-bottom: 24px;
     }
-
 `;
+
 export const Search = styled.div`
     grid-area: search;
     padding: 64px 64px 0;
 `;
+
 export const Content = styled.div`
     grid-area: content;
-    background: blue;
+    padding: 0 64px;
+    overflow-y: auto;
 `;
+
 export const NewNote= styled.button`
     grid-area: newnote;
 
